@@ -1,24 +1,21 @@
 ﻿using Microsoft.AspNetCore.Http;
+using RecipeBox.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RecipeBox.Models
+namespace RecipeBox.ViewModels
 {
-    public class Recipe
+    public class RecipeViewModel
     {
-        [Key]
-        [Required]
-        public int Id { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
         public string Description { get; set; }
         [Required]
-        public string Image { get; set; }
+        public IFormFile Image { get; set; }
         [Required]
         public double Hours { get; set; }
         [Required]
@@ -27,10 +24,5 @@ namespace RecipeBox.Models
         public List<IngredientItem> Ingredients { get; set; }
         [Required]
         public List<DirectionStep> Directions { get; set; }
-
-        public Recipe()
-        {
-
-        }
     }
 }
